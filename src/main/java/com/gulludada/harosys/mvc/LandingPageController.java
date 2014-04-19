@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/")
 public class LandingPageController {
-	
+	//new comment
 	private static String HOME_PAGE = "home";
 	
 	
