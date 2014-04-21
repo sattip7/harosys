@@ -12,7 +12,7 @@
 			<form action="">
 				<h1>Sign In</h1>
 				<div>
-					<input type="text" placeholder="Username" required="" id="username" />
+					<input type="text" name="username" placeholder="Username" required="" id="username" />
 				</div>
 				<div>
 					<input type="password" placeholder="Password" required=""
