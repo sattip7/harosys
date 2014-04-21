@@ -40,7 +40,7 @@
                 <input value="Sign up" name="submit" type="submit"><input value="Cancel" name="submit" type="reset">
                 <div><a href="#" id="signIn">Sign in</a><a href="#">Forgot password?</a>
 				</div>
-            </fieldset>    
+            </fieldset>     
         </form>
 		</body>
 		</html>
