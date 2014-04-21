@@ -5,28 +5,7 @@
 <title>Paper Stack</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-<script >
-$(document).ready(function(){
-	alert("welcome");
-	$("#register").click(function(){
-		alert("hi..");
-	$(".container").hide();
-	$("#wrapper").show();	
-	});
-	
-	$("#signIn").click(function(){
-	$("#wrapper").hide();
-	$(".container").show();	
-	});
-	
-	
-	});
-
-
-</script>
 </head>
 <body>
 <div class="container">
@@ -41,7 +20,7 @@ $(document).ready(function(){
 			</div>
 			<div>
 				<input type="submit" value="Sign in" name="submit"><input type="reset" value="Cancel" name="submit">
-				<div ><a href="#" id="register" >Register</a><a href="#">Forgot password?</a>
+				<div ><a href="register" id="register" >Register</a><a href="#">Forgot password?</a>
 				</div>
 			</div>
 		</form><!-- form -->
@@ -49,31 +28,6 @@ $(document).ready(function(){
 	</section><!-- content -->
 </div><!-- container -->
 
-<div id="wrapper" style="display:none;">
-        <form method="post" action="">
-            <fieldset>
-                <legend>Register Form</legend>
-                <div>
-                    <input type="text" placeholder="First Name" name="first_name">
-                </div>
-                <div>
-                    <input type="text" placeholder="Last Name" name="last_name">
-                </div>
-                <div>
-                    <input type="password" placeholder="Password" name="first_name">
-                </div>
-                <div>
-                    <input type="text" placeholder="Email" name="email">
-                </div>
-                <div>
-                    <div class="small">this textarea is just for test so you can see the placeholder working on textarea as well</div>
-                    <textarea placeholder="Message" name="message"></textarea>
-                </div>    
-                <input type="submit" value="Sign up" name="submit" ><input type="reset" value="Cancel" name="submit">
-                <div ><a href="#" id="signIn">Sign in</a><a href="#">Forgot password?</a>
-				</div>
-            </fieldset>    
-        </form>
-    </div>
+
 </body>
 </html>

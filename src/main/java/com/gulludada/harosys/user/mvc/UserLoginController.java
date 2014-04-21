@@ -11,7 +11,7 @@ import com.gulludada.harosys.user.mvc.dto.LdapUserDto;
 public class UserLoginController {
 
 	private static final String LOGIN_PAGE = "login";
-	private static final String SIGN_UP_PAGE = "";
+	private static final String SIGN_UP_PAGE = "register";
 	private static final String FORGOT_PASSWORD_PAGE = "";
 	private static final String SUCCESS_LOGIN_PAGE = "";
 	private static final String SUCCESS_REGISTER_PAGE = "";
