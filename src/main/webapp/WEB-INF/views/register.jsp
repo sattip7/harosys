@@ -6,8 +6,7 @@
 <head>
 <meta charset="utf-8">
 <title>Paper Stack</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
-
+<link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" >
 
 <body>
 <div id="wrapper" >
@@ -34,7 +33,6 @@
                 </div>
 				
                 <div>
-                    <div class="small">this textarea is just for test so you can see the placeholder working on textarea as well</div>
                     <textarea placeholder="Address" name="address"></textarea>
                 </div>    
                 <input value="Sign up" name="submit" type="submit"><input value="Cancel" name="submit" type="reset">

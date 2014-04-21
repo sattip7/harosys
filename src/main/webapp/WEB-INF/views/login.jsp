@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Paper Stack</title>
-<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
-<script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"></script>
+<link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" >
+<script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"></script
 </head>
 <body>
 	<div class="container">
@@ -22,8 +22,7 @@
 					<input type="submit" value="Sign in" name="submit"><input
 						type="reset" value="Cancel" name="submit">
 					<div>
-						<a href="="
-							${pageContext.request.contextPath}/user/register" id="register">Register</a><a
+						<a href="${pageContext.request.contextPath}/user/register" id="register">Register</a><a
 							href="#">Forgot password?</a>
 					</div>
 				</div>
