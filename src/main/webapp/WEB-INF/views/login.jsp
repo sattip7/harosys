@@ -20,7 +20,7 @@
 			</div>
 			<div>
 				<input type="submit" value="Sign in" name="submit"><input type="reset" value="Cancel" name="submit">
-				<div ><a href="register" id="register" >Register</a><a href="#">Forgot password?</a>
+				<div ><a href="="${pageContext.request.contextPath}/register" id="register" >Register</a><a href="#">Forgot password?</a>
 				</div>
 			</div>
 		</form><!-- form -->
