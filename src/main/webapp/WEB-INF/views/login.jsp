@@ -10,6 +10,9 @@
 	<div class="container">
 		<section id="content">
 			<form action="">
+			<c:if test="${registered}">
+			User Regitered succesfully
+			</c:if>
 				<h1>Sign In</h1>
 				<div>
 					<input type="text" placeholder="Username" required="" id="username" />

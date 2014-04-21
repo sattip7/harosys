@@ -17,8 +17,13 @@ public class LandingPageController {
 
 	private static final String REDIRECTING_TO_USER_LOGIN_PAGE = "user/login";
 
+	public LandingPageController() {
+	System.out.println("Object created");
+	}
+	
 	@RequestMapping(method = RequestMethod.GET)
 	public String landingPage(HttpServletRequest request) {
+		System.out.println("insde landing");
 		
 		String ipAddress = request.getHeader("X-FORWARDED-FOR");
 		if (ipAddress == null) {

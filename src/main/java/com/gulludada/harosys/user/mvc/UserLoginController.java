@@ -1,5 +1,8 @@
 package com.gulludada.harosys.user.mvc;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -26,9 +29,10 @@ public class UserLoginController {
 	}
 
 	@RequestMapping(value = "user/login", method = RequestMethod.POST)
-	public String submitLoginPage() {
+	public String submitLoginPage(HttpSession session) {
 		LOGGER.info("================>> A user is is trying to login with username "
 				+ "...");
+		session.setAttribute("user", true)
 		return SUCCESS_LOGIN_PAGE;
 	}
 
@@ -45,10 +49,12 @@ public class UserLoginController {
 		return SIGN_UP_PAGE;
 	}
 
-	@RequestMapping(value = "user/register", method = RequestMethod.POST)
-	public String submitSignUpPage() {
+	@RequestMapping(value = "user/register",method = RequestMethod.POST)
+	public String submitSignUpPage(HttpServletRequest req) {
 		LOGGER.info("================>> A user is trying to create a a/c with mailid or username "
 				+ "...");
-		return SUCCESS_REGISTER_PAGE;
+		req.setAttribute("registered", true);
+		
+		return LOGIN_PAGE;
 	}
 }
