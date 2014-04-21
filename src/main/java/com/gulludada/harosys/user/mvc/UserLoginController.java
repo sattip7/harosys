@@ -23,7 +23,7 @@ public class UserLoginController {
 	@RequestMapping(value = "user/login", method = RequestMethod.GET)
 	public String showLoginPage(ModelMap map) {
 		LOGGER.debug("================> user login form is requested.");
-		map.addAttribute("ldapUserDto", new LdapUserDto());
+		/*map.addAttribute("ldapUserDto", new LdapUserDto());*/
 		return LOGIN_PAGE;
 	}
 
