@@ -7,8 +7,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.gulludada.harosys.user.mvc.dto.LdapUserDto;
-
 @Controller
 public class UserLoginController {
 
@@ -43,7 +41,7 @@ public class UserLoginController {
 
 	@RequestMapping(value = "user/register", method = RequestMethod.GET)
 	public String showSignUpPage(ModelMap map) {
-		LOGGER.debug("================> user sign form is requested.");
+		LOGGER.debug("================> user signup form is requested.");
 		return SIGN_UP_PAGE;
 	}
 
