@@ -1,4 +1,4 @@
-package com.gulludada.harosys.mvc;
+ package com.gulludada.harosys.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
