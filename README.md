@@ -1,4 +1,4 @@
-harosys authors: satish ponnam, gulshan motwani
+harosys 
 ========================
 
 What is it?
