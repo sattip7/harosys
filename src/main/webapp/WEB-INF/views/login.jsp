@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <title>Paper Stack</title>
 <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" >
+<<<<<<< HEAD
 //hosted by Microsoft Ajax CDN
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 //hosted by Google API
@@ -34,6 +35,8 @@ $(function() {
 });
 
 </script>
+
+
 </head>
 <body>
 
