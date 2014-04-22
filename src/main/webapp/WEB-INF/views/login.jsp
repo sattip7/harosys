@@ -19,7 +19,7 @@ $(function() {
 		rules: {        	        		
 			userName: "required",
 			password: "required",
-					
+					 
     	},  
 	    errorElement: "span" ,                              
 	    messages: {
