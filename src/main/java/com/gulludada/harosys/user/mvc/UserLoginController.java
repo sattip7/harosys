@@ -7,8 +7,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.gulludada.harosys.user.mvc.dto.LdapUserDto;
+import com.gulludada.harosys.user.mvc.dto.UserDto;
 
 @Controller
 public class UserLoginController {
@@ -18,21 +22,22 @@ public class UserLoginController {
 	private static final String LOGIN_PAGE = "login";
 	private static final String SIGN_UP_PAGE = "register";
 	private static final String FORGOT_PASSWORD_PAGE = "";
-	private static final String SUCCESS_LOGIN_PAGE = "";
+	private static final String SUCCESS_LOGIN_PAGE = "success";
 	private static final String SUCCESS_REGISTER_PAGE = "";
 
 	@RequestMapping(value = "user/login", method = RequestMethod.GET)
 	public String showLoginPage(ModelMap map) {
 		LOGGER.debug("================> user login form is requested.");
 		/*map.addAttribute("ldapUserDto", new LdapUserDto());*/
+		map.addAttribute("ldapUserDto", new LdapUserDto());
 		return LOGIN_PAGE;
 	}
 
 	@RequestMapping(value = "user/login", method = RequestMethod.POST)
-	public String submitLoginPage(HttpSession session) {
+	public String submitLoginPage(HttpSession session, @ModelAttribute("ldapuserDto") LdapUserDto ldapUserdto) {
 		LOGGER.info("================>> A user is is trying to login with username "
 				+ "...");
-		session.setAttribute("user", true)
+		session.setAttribute("user", true);
 		return SUCCESS_LOGIN_PAGE;
 	}
 
