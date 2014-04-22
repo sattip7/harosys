@@ -31,7 +31,7 @@ public class UserLoginController {
 		/*map.addAttribute("ldapUserDto", new LdapUserDto());*/
 		map.addAttribute("ldapUserDto", new LdapUserDto());
 		return LOGIN_PAGE;
-	}
+	} 
 
 	@RequestMapping(value = "user/login", method = RequestMethod.POST)
 	public String submitLoginPage(HttpSession session, @ModelAttribute("ldapuserDto") LdapUserDto ldapUserdto) {
