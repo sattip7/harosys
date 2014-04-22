@@ -14,7 +14,7 @@
 
 <script>
 $(function() {
-	$("#login").validate({
+	$("#login").validate({ 
 		rules: {        	        		
 			userName: "required",
 			password: "required",
