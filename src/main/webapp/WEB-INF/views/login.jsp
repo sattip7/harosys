@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <title>Paper Stack</title>
 <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" >
-<script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"></script
 </head>
 <body>
 	<div class="container">

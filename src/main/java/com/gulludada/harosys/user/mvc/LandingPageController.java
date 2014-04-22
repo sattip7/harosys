@@ -19,12 +19,13 @@ public class LandingPageController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String landingPage(HttpServletRequest request) {
-		
+
 		String ipAddress = request.getHeader("X-FORWARDED-FOR");
 		if (ipAddress == null) {
 			ipAddress = request.getRemoteAddr();
 		}
-		LOGGER.info("================> A request is hitting from the ip "+ipAddress);
-		return "redirect:"+REDIRECTING_TO_USER_LOGIN_PAGE;
+		LOGGER.info("================> A request is hitting from the ip "
+				+ ipAddress);
+		return "redirect:" + REDIRECTING_TO_USER_LOGIN_PAGE;
 	}
 }
