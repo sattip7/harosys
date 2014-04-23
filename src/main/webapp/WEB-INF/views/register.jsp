@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -6,39 +7,100 @@
 <head>
 <meta charset="utf-8">
 <title>Paper Stack</title>
-<link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" >
+<link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" />
+<script
+ src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"
+ type="text/javascript"></script>
 
+<script
+ src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"
+ type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#submit').click(function() {
+		
+	
+	$('#register').validate({ 
+		
+		rules: {        	        		
+			userName: "required",
+			password: "required",
+			firstName: "required",
+			lastName: "required",
+			dateOfBirth: "required",
+			email: "required",
+			phoneNo: "required",
+					 
+    	},  
+	    errorElement: "span" ,                              
+	    messages: {
+	    	userName: " Enter userName",
+	    	password: " Enter Password",
+    		firstName: " Enter First Name",
+    		lastName: " Enter lastName",
+    		dateOfBirth: " Enter dateOfBirth",
+    		email: " Enter email",
+    		phoneNo: " Enter Phone no.",
+    		
+	    },
+    	
+    	submitHandler: function(form) {
+            form.submit();
+        }
+	    
+	});
+	alert("validate caleed");
+});
+});
+</script>
+</head>
 <body>
 <div id="wrapper" >
-<form method="post" action="">
-            <fieldset>
-                <legend>Register Form</legend>
+<form:form id="register" action="${pageContext.request.contextPath}/user/register" method="post" commandName="userDto">
+
+
+           	 <legend>Register Form</legend>
+            
                 <div>
-                    <input placeholder="First Name" name="first_name" required="" type="text">
+               
+                    <form:input path="userName" title="Enter First Name"/>
+                </div>
+                
+                <div>
+               
+                    <form:input path="password" title="Enter First Name"/>
                 </div>
                 <div>
-                    <input placeholder="Last Name" name="last_name" required="" type="text">
+                <form:input path="firstName" title="Enter Last Name"/>
+                    
                 </div>
                 <div>
-                    <input placeholder="Password" name="first_name" required="" type="password">
+                  <form:input path="lastName" title="Enter Password"/>
+                    
                 </div>
                 <div>
-                    <input placeholder="Email" name="email" required="" type="text">
+                 <form:input path="dateOfBirth" title="Enter Email"/>
+                  
+                </div>
+                <div>
+                 <form:input path="email" title="Enter Email"/>
+                  
                 </div>
 				 <div>
-                    <input placeholder="Phone no" name="phone_no" required="" type="text">
+				 <form:input path="phoneNo" title="Enter Phone_no"/>
+                   
                 </div>
-				 <div>
-                    <input placeholder="Date Of Birth" name="dob" required="" type="text">
-                </div>
-				
+				 
                 <div>
                     <textarea placeholder="Address" name="address"></textarea>
                 </div>    
-                <input value="Sign up" name="submit" type="submit"><input value="Cancel" name="submit" type="reset">
+                <input value="Sign up" name="submit" id="submit" type="submit"><input value="Cancel"  type="reset">
                 <div><a href="#" id="signIn">Sign in</a><a href="#">Forgot password?</a>
 				</div>
-            </fieldset>     
-        </form>
+           
+        </form:form>
 		</body>
 		</html>
