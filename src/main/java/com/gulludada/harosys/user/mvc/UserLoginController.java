@@ -1,12 +1,18 @@
 package com.gulludada.harosys.user.mvc;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,11 +31,19 @@ public class UserLoginController {
 	private static final String FORGOT_PASSWORD_PAGE = "";
 	private static final String SUCCESS_LOGIN_PAGE = "success";
 	private static final String SUCCESS_REGISTER_PAGE = "";
+	
+	@InitBinder
+	public void initBinder(WebDataBinder webDataBinder) {
+	 SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+	 dateFormat.setLenient(false);
+	 webDataBinder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+	 }
 
 	@RequestMapping(value = "user/login", method = RequestMethod.GET)
-	public String showLoginPage(ModelMap map) {
+	public String showLoginPage(ModelMap map,HttpServletRequest req) {
 		LOGGER.debug("================> user login form is requested.");
 		/*map.addAttribute("ldapUserDto", new LdapUserDto());*/
+		
 		map.addAttribute("ldapUserDto", new LdapUserDto());
 		return LOGIN_PAGE;
 	} 
@@ -62,6 +76,6 @@ public class UserLoginController {
 				+ "...");
 		req.setAttribute("registered", true);
 		//String login="${pageContext.request.contextPath}"+ "/user/login;
-		return new ModelAndView("redirect:login");
+		return new ModelAndView("forward:"+"/user/login");
 	}
 }
