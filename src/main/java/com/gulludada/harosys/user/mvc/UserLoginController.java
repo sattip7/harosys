@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.gulludada.harosys.user.mvc.dto.LdapUserDto;
 import com.gulludada.harosys.user.mvc.dto.UserDto;
@@ -51,15 +52,16 @@ public class UserLoginController {
 	@RequestMapping(value = "user/register", method = RequestMethod.GET)
 	public String showSignUpPage(ModelMap map) {
 		LOGGER.debug("================> user signup form is requested.");
+		map.addAttribute("userDto", new UserDto());
 		return SIGN_UP_PAGE;
 	}
 
 	@RequestMapping(value = "user/register",method = RequestMethod.POST)
-	public String submitSignUpPage(HttpServletRequest req) {
+	public ModelAndView submitSignUpPage(HttpServletRequest req, @ModelAttribute("userDto") UserDto userDto) {
 		LOGGER.info("================>> A user is trying to create a a/c with mailid or username "
 				+ "...");
 		req.setAttribute("registered", true);
-		
-		return LOGIN_PAGE;
+		//String login="${pageContext.request.contextPath}"+ "/user/login;
+		return new ModelAndView("redirect:login");
 	}
 }

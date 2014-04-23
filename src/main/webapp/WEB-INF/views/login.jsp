@@ -5,17 +5,23 @@
 <meta charset="utf-8">
 <title>Paper Stack</title>
 <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" >
-<<<<<<< HEAD
-//hosted by Microsoft Ajax CDN
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-//hosted by Google API
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<%-- <script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"/>
---%>
 
-<script>
-$(function() {
-	$("#login").validate({ 
+<script
+ src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"
+ type="text/javascript"></script>
+
+<script
+ src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"
+ type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#submit').click(function() {
+		
+	
+	$('#login').validate({ 
 		rules: {        	        		
 			userName: "required",
 			password: "required",
@@ -23,8 +29,8 @@ $(function() {
     	},  
 	    errorElement: "span" ,                              
 	    messages: {
-    		name: " Enter User Name",
-    		email: " Enter Password Email",
+    		userName: " User Name Cant Be Blank",
+    		password: " Password Cant Be Blank"
     		
 	    },
     	
@@ -33,7 +39,7 @@ $(function() {
         }
 	});
 });
-
+});
 </script>
 
 
@@ -50,14 +56,14 @@ $(function() {
 			</c:if>
 				<h1>Sign In</h1>
 				<div>
-					<form:input path="userName" title="Enter the user name" maxlength="25" size="55" />
+					<form:input path="userName" title="Enter User name" maxlength="25" size="55" />
 				</div>
 				<div>
-					<form:input path="password" title="password"/>
+					<form:input path="password" title="Enter Password"/>
 				</div>
 				<div>
-					<input type="submit" value="Sign in" name="submit" > 
-					<input type="reset" value="Cancel" name="submit">
+					<input id="submit" type="submit" value="Sign in" name="submit" > 
+					<input type="reset" value="Cancel" >
 					<div>
 						<a href="${pageContext.request.contextPath}/user/register" id="register">Register</a><a
 							href="#">Forgot password?</a>
