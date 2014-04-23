@@ -63,7 +63,7 @@ $(document).ready(function() {
 
 
            	 <legend>Register Form</legend>
-           
+            
                 <div>
                
                     <form:input path="userName" title="Enter First Name"/>
