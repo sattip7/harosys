@@ -6,22 +6,14 @@
 <title>Paper Stack</title>
 <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" >
 
-<script
- src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"
- type="text/javascript"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<%-- <script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"/>
+--%>
 
-<script
- src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/jquery.validate.js"
- type="text/javascript"></script>
-
-
-
-<script type="text/javascript">
-$(document).ready(function() {
-	$('#submit').click(function() {
-		
-	
-	$('#login').validate({ 
+<script>
+$(function() {
+	$("#login").validate({ 
 		rules: {        	        		
 			userName: "required",
 			password: "required",
@@ -29,8 +21,8 @@ $(document).ready(function() {
     	},  
 	    errorElement: "span" ,                              
 	    messages: {
-    		userName: " User Name Cant Be Blank",
-    		password: " Password Cant Be Blank"
+    		name: " Enter User Name",
+    		email: " Enter Password Email",
     		
 	    },
     	
@@ -39,7 +31,7 @@ $(document).ready(function() {
         }
 	});
 });
-});
+
 </script>
 
 
@@ -56,14 +48,14 @@ $(document).ready(function() {
 			</c:if>
 				<h1>Sign In</h1>
 				<div>
-					<form:input path="userName" title="Enter User name" maxlength="25" size="55" />
+					<form:input path="userName" title="Enter the user name" maxlength="25" size="55" />
 				</div>
 				<div>
-					<form:input path="password" title="Enter Password"/>
+					<form:input path="password" title="password"/>
 				</div>
 				<div>
-					<input id="submit" type="submit" value="Sign in" name="submit" > 
-					<input type="reset" value="Cancel" >
+					<input type="submit" value="Sign in" name="submit" > 
+					<input type="reset" value="Cancel" name="submit">
 					<div>
 						<a href="${pageContext.request.contextPath}/user/register" id="register">Register</a><a
 							href="#">Forgot password?</a>
