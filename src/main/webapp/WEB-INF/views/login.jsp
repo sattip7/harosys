@@ -5,10 +5,8 @@
 <meta charset="utf-8">
 <title>Paper Stack</title>
 <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" >
-<<<<<<< HEAD
-//hosted by Microsoft Ajax CDN
+
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-//hosted by Google API
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <%-- <script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"/>
 --%>
