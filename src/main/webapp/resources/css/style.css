@@ -163,17 +163,17 @@ form:after {
 	padding: 15px 10px 15px 40px;
 	width: 80%;
 }
-#content form input[type="text"]:focus,
-#content form input[type="password"]:focus {
-	-webkit-box-shadow: 0 0 2px #ed1c24 inset;
-	-moz-box-shadow: 0 0 2px #ed1c24 inset;
-	-ms-box-shadow: 0 0 2px #ed1c24 inset;
-	-o-box-shadow: 0 0 2px #ed1c24 inset;
-	box-shadow: 0 0 2px #ed1c24 inset;
-	background-color: #fff;
-	border: 1px solid #ed1c24;
-	outline: none;
-}
+/* #content form input[type="text"]:focus, */
+/* #content form input[type="password"]:focus { */
+/* 	-webkit-box-shadow: 0 0 2px #ed1c24 inset; */
+/* 	-moz-box-shadow: 0 0 2px #ed1c24 inset; */
+/* 	-ms-box-shadow: 0 0 2px #ed1c24 inset; */
+/* 	-o-box-shadow: 0 0 2px #ed1c24 inset; */
+/* 	box-shadow: 0 0 2px #ed1c24 inset; */
+/* 	background-color: #fff; */
+/* 	border: 1px solid #ed1c24; */
+/* 	outline: none; */
+/* } */
 #username { background-position: 10px 10px !important }
 #password { background-position: 10px -53px !important }
 /*#content form input[type="submit"] {
@@ -251,6 +251,9 @@ a {
 	border-top: 1px solid #CFD5D9;
 	padding: 15px 0;
 }
+.errorClass{
+	color:#FF0000;
+}
 .button a {
 	background: url(http://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;
 	color: #7E7E7E;
@@ -304,19 +307,19 @@ fieldset {
     padding: 8px 6px;
     width: 280px;
 }
-#wrapper input[type="text"]:focus, #wrapper input[type="password"]:focus {
-    background: none repeat scroll 0 0 #F5FCFE;
-    border-color: #CCCCCC;
-    box-shadow: 0 0 5px rgba(4, 129, 177, 0.5);
-    color: #373737;
-    opacity: 0.6;
-    text-indent: 0;
-    transition-duration: 400ms;
-    transition-property: width, background;
-    transition-timing-function: ease;
-    width: 380px;
-    z-index: 1;
-}
+/* #wrapper input[type="text"]:focus, #wrapper input[type="password"]:focus { */
+/*     background: none repeat scroll 0 0 #F5FCFE; */
+/*     border-color: #CCCCCC; */
+/*     box-shadow: 0 0 5px rgba(4, 129, 177, 0.5); */
+/*     color: #373737; */
+/*     opacity: 0.6; */
+/*     text-indent: 0; */
+/*     transition-duration: 400ms; */
+/*     transition-property: width, background; */
+/*     transition-timing-function: ease; */
+/*     width: 380px; */
+/*     z-index: 1; */
+/* } */
 #wrapper input[type="submit"] ,#content form input[type="submit"]  ,#wrapper input[type="reset"] ,#content form input[type="reset"]{
     background: none repeat scroll 0 0 #222222;
     border: medium none;

@@ -36,7 +36,7 @@ $(document).ready(function() {
 	    errorElement: "span" ,                              
 	    messages: {
     		userName: " Enter User Name",
-    		password: " Enter Password Email"
+    		password: " Enter Password"
     		
 	    },
     	
@@ -61,10 +61,10 @@ $(document).ready(function() {
 			User Regitered succesfully
 			</c:if>
 				<h1>Sign In</h1>
-				<div>
+				<div style="color:red">
 					<form:input path="userName" title="Enter the user name" maxlength="25" size="55" />
 				</div>
-				<div>
+				<div style=color:red>
 					<form:input path="password" title="password"/>
 				</div>
 				<div>
@@ -72,7 +72,7 @@ $(document).ready(function() {
 					<input type="reset" value="Cancel" >
 					<div>
 						<a href="${pageContext.request.contextPath}/user/register" id="register">Register</a><a
-							href="#">Forgot password?</a>
+							href="${pageContext.request.contextPath}/user/forgot">Forgot password?</a>
 					</div>
 				</div>
 			</form:form>

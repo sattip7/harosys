@@ -26,24 +26,56 @@ $(document).ready(function() {
 	$('#register').validate({ 
 		
 		rules: {        	        		
-			userName: "required",
-			password: "required",
-			firstName: "required",
-			lastName: "required",
-			dateOfBirth: "required",
-			email: "required",
-			phoneNo: "required",
+			userName: { 
+				required:true,
+				digits : false
+				},
+			password: { 
+				required:true
+				
+				},
+			firstName: { 
+				required:true,
+				digits : false
+				},
+			lastName:{ 
+				required:true,
+				digits : false
+				},
+			dateOfBirth: { 
+				required:true,
+				digits : false
+				},
+			email: { 
+				required:true,
+				email: true,
+				
+				},
+			phoneNo: { 
+				required:true,
+				digits : true,
+				minlength: 10
+				
+				}
 					 
-    	},  
-	    errorElement: "span" ,                              
+    	}, 
+    	errorClass:"errorClass",                              
 	    messages: {
-	    	userName: " Enter userName",
-	    	password: " Enter Password",
-    		firstName: " Enter First Name",
-    		lastName: " Enter lastName",
-    		dateOfBirth: " Enter dateOfBirth",
-    		email: " Enter email",
-    		phoneNo: " Enter Phone no.",
+	    	userName: {required:"<br/> Enter userName",
+				digits :  "<br/> Enter alphabets"},
+	    	password:  {required:"<br/>Enter userName"},
+			
+    		firstName: {required:"<br/>Enter FirstName",
+				digits :  "<br/> Enter alphabets"},
+    		lastName: {required:"<br/>Enter LastName",
+				digits :  "<br/> Enter alphabets"},
+    		dateOfBirth: {required:"<br/>Enter DateOfBirth",
+				digits :  " <br/>Enter alphabets"},
+    		email: {required:"<br/>Enter userName",
+				digits :  "<br/> Enter alphabets"},
+    		phoneNo: {required:"<br/>Enter userName",
+				digits :  "<br/> Enter Digits",
+				minlength:"<br/>Enter min 10"},
     		
 	    },
     	
@@ -64,16 +96,16 @@ $(document).ready(function() {
 
            	 <legend>Register Form</legend>
             
-                <div>
+                <div >
                
                     <form:input path="userName" title="Enter First Name"/>
                 </div>
                 
-                <div>
+                <div >
                
                     <form:input path="password" title="Enter First Name"/>
                 </div>
-                <div>
+                <div style="color:red">
                 <form:input path="firstName" title="Enter Last Name"/>
                     
                 </div>
@@ -98,9 +130,9 @@ $(document).ready(function() {
                     <textarea placeholder="Address" name="address"></textarea>
                 </div>    
                 <input value="Sign up" name="submit" id="submit" type="submit"><input value="Cancel"  type="reset">
-                <div><a href="#" id="signIn">Sign in</a><a href="#">Forgot password?</a>
+<!--                 <div><a href="#" id="signIn">Sign in</a><a href="#">Forgot password?</a> 
 				</div>
-           
+           -->
         </form:form>
 		</body>
 		</html>
