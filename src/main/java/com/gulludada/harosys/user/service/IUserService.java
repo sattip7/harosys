@@ -7,7 +7,7 @@ public interface IUserService {
 	
 	public boolean validateUser(LdapUserDto ldapUserDto);
 
-	public UserDto saveUser(UserDto userDto);
+	public boolean saveUser(UserDto userDto);
 	
 	public String sendLinkToMailForForgotPassword(String userdetails);
 }

@@ -9,6 +9,7 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,9 +23,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.gulludada.harosys.user.mvc.dto.LdapUserDto;
 import com.gulludada.harosys.user.mvc.dto.UserDto;
+import com.gulludada.harosys.user.service.IUserService;
 
 @Controller
 public class UserLoginController {
+	
+	@Autowired
+	IUserService userService;
 
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(UserLoginController.class);
@@ -82,11 +87,15 @@ public class UserLoginController {
 	public ModelAndView submitSignUpPage(HttpServletRequest req, @Valid @ModelAttribute("userDto") UserDto userDto, BindingResult result) {
 		LOGGER.info("================>> A user is trying to create a a/c with mailid or username "
 				+ "...");
-		if(result.hasErrors()){
-			return new ModelAndView(SIGN_UP_PAGE);
-		}
+//		if(result.hasErrors()){
+//			return new ModelAndView(SIGN_UP_PAGE);
+//		}
+		boolean b=userService.saveUser(userDto);
+				System.out.println(b);
+		if(b)
 		req.setAttribute("registered", true);
 		//String login="${pageContext.request.contextPath}"+ "/user/login;
+		System.out.println("abc");
 		return new ModelAndView("forward:"+"/user/login");
 	}
 }
