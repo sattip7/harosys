@@ -1,8 +1,16 @@
 package com.gulludada.harosys.user.mvc.dto;
 
-public class LdapUserDto {
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
+public class LdapUserDto {
+	
+	@NotEmpty
 	private String userName;
+	
+	@NotEmpty(message="Password Cant Be Empty")
+	@Size(min=5, max=15, message="Password is Weak")
 	private String password;
 
 	public String getUserName() {

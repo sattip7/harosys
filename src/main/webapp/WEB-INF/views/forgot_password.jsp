@@ -58,7 +58,7 @@ $(document).ready(function() {
 <form:form id="form" action="${pageContext.request.contextPath}/user/register" method="post" commandName="userDto">
 
 
-           	 <legend>Register Form</legend>
+           	 <legend></legend>
             
                
                 <div>

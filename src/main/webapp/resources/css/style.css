@@ -254,6 +254,11 @@ a {
 .errorClass{
 	color:#FF0000;
 }
+.error {
+    color: #ff0000;
+    font-style: italic;
+    font-weight: bold;
+}
 .button a {
 	background: url(http://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;
 	color: #7E7E7E;

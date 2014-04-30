@@ -2,15 +2,67 @@ package com.gulludada.harosys.user.mvc.dto;
 
 import java.util.Date;
 
-public class UserDto {
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
+
+
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
+
+import javax.validation.constraints.Pattern;
+@Entity
+@Table(name="UserDto")
+public class UserDto {
+	
+	
+	@NotEmpty
+	@Id
 	private String userName;
+	
+	@NotEmpty
+	@Column
 	private String password;
+	
+	@NotEmpty
+	@Pattern(regexp = "[A-Za-z ]*", message = "Name must contain only letters and spaces")
+	@Column
 	private String firstName;
+	
+	@NotEmpty
+	@Pattern(regexp = "[A-Za-z ]*", message = "It must contain only letters and spaces")
+	@Column
 	private String lastName;
+	
+	@DateTimeFormat(pattern="MM/dd/yyyy")
+    @NotNull @Past
+	@Column
 	private Date dateOfBirth;
+	
+	@NotEmpty @Email
+	@Column
 	private String email;
+	
+	
+	@NumberFormat(style=Style.NUMBER)
+	@Size(min=10, max=10)
+	@Column
 	private String phoneNo;
+	
+	@NotEmpty
+	@Column
 	private String address;
 
 	public String getUserName() {

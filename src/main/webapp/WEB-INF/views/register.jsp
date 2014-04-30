@@ -23,67 +23,67 @@ $(document).ready(function() {
 	$('#submit').click(function() {
 		
 	
-	$('#register').validate({ 
+// 	$('#register').validate({ 
 		
-		rules: {        	        		
-			userName: { 
-				required:true,
-				digits : false
-				},
-			password: { 
-				required:true
+// 		rules: {        	        		
+// 			userName: { 
+// 				required:true,
+// 				digits : false
+// 				},
+// 			password: { 
+// 				required:true
 				
-				},
-			firstName: { 
-				required:true,
-				digits : false
-				},
-			lastName:{ 
-				required:true,
-				digits : false
-				},
-			dateOfBirth: { 
-				required:true,
-				digits : false
-				},
-			email: { 
-				required:true,
-				email: true,
+// 				},
+// 			firstName: { 
+// 				required:true,
+// 				digits : false
+// 				},
+// 			lastName:{ 
+// 				required:true,
+// 				digits : false
+// 				},
+// 			dateOfBirth: { 
+// 				required:true,
+// 				digits : false
+// 				},
+// 			email: { 
+// 				required:true,
+// 				email: true,
 				
-				},
-			phoneNo: { 
-				required:true,
-				digits : true,
-				minlength: 10
+// 				},
+// 			phoneNo: { 
+// 				required:true,
+// 				digits : true,
+// 				minlength: 10
 				
-				}
+// 				}
 					 
-    	}, 
-    	errorClass:"errorClass",                              
-	    messages: {
-	    	userName: {required:"<br/> Enter userName",
-				digits :  "<br/> Enter alphabets"},
-	    	password:  {required:"<br/>Enter userName"},
+//     	}, 
+//     	errorClass:"errorClass",                              
+// 	    messages: {
+// 	    	userName: {required:"<br/> Enter userName",
+// 				digits :  "<br/> Enter alphabets"},
+// 	    	password:  {required:"<br/>Enter userName"},
 			
-    		firstName: {required:"<br/>Enter FirstName",
-				digits :  "<br/> Enter alphabets"},
-    		lastName: {required:"<br/>Enter LastName",
-				digits :  "<br/> Enter alphabets"},
-    		dateOfBirth: {required:"<br/>Enter DateOfBirth",
-				digits :  " <br/>Enter alphabets"},
-    		email: {required:"<br/>Enter userName",
-				digits :  "<br/> Enter alphabets"},
-    		phoneNo: {required:"<br/>Enter userName",
-				digits :  "<br/> Enter Digits",
-				minlength:"<br/>Enter min 10"},
+//     		firstName: {required:"<br/>Enter FirstName",
+// 				digits :  "<br/> Enter alphabets"},
+//     		lastName: {required:"<br/>Enter LastName",
+// 				digits :  "<br/> Enter alphabets"},
+//     		dateOfBirth: {required:"<br/>Enter DateOfBirth",
+// 				digits :  " <br/>Enter alphabets"},
+//     		email: {required:"<br/>Enter userName",
+// 				digits :  "<br/> Enter alphabets"},
+//     		phoneNo: {required:"<br/>Enter userName",
+// 				digits :  "<br/> Enter Digits",
+// 				minlength:"<br/>Enter min 10"},
     		
-	    },
+// 	    },
     	
-    	submitHandler: function(form) {
-            form.submit();
-        }
+//     	submitHandler: function(form) {
+//             form.submit();
+//         }
 	    
-	});
+// 	});
 	
 });
 });
@@ -96,38 +96,44 @@ $(document).ready(function() {
 
            	 <legend>Register Form</legend>
             
-                <div >
+                <div>
                
                     <form:input path="userName" title="Enter First Name"/>
+                    <form:errors path="userName" htmlEscape="false" cssClass="error"></form:errors>
                 </div>
                 
                 <div >
                
-                    <form:input path="password" title="Enter First Name"/>
+                    <form:input path="password"  title="Enter First Name"/>
+                    <form:errors path="password" htmlEscape="false" cssClass="error"></form:errors>
                 </div>
-                <div style="color:red">
+                <div >
                 <form:input path="firstName" title="Enter Last Name"/>
+                <form:errors path="firstName" htmlEscape="false" cssClass="error"></form:errors>
                     
                 </div>
                 <div>
                   <form:input path="lastName" title="Enter Password"/>
+                  <form:errors path="lastName" htmlEscape="false" cssClass="error"></form:errors>
                     
                 </div>
                 <div>
                  <form:input path="dateOfBirth" title="Enter Email"/>
-                  
+                  <form:errors path="dateOfBirth" htmlEscape="false" cssClass="error"></form:errors>
                 </div>
                 <div>
                  <form:input path="email" title="Enter Email"/>
-                  
+                  <form:errors path="email" htmlEscape="false" cssClass="error"></form:errors>
                 </div>
 				 <div>
 				 <form:input path="phoneNo" title="Enter Phone_no"/>
-                   
+                   <form:errors path="phoneNo" htmlEscape="false" cssClass="error"></form:errors>
                 </div>
 				 
                 <div>
                     <textarea placeholder="Address" name="address"></textarea>
+                    <<form:errors path="Address" htmlEscape="false" cssClass="error"></form:errors>
+                    
                 </div>    
                 <input value="Sign up" name="submit" id="submit" type="submit"><input value="Cancel"  type="reset">
 <!--                 <div><a href="#" id="signIn">Sign in</a><a href="#">Forgot password?</a> 

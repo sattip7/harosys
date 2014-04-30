@@ -56,16 +56,18 @@ $(document).ready(function() {
 
 	<div class="container">
 		<section id="content">
-		 	<form:form id="login1" name="login1" action="${pageContext.request.contextPath}/user/login" method="post" commandName="ldapUserDto">
+		 	<form:form id="login1" name="login1" action="${pageContext.request.contextPath}/user/login" method="post" commandName="ldapUserDto1">
 			<c:if test="${registered}">
 			User Regitered succesfully
 			</c:if>
 				<h1>Sign In</h1>
 				<div style="color:red">
 					<form:input path="userName" title="Enter the user name" maxlength="25" size="55" />
+					<form:errors path="userName" />
 				</div>
 				<div style=color:red>
 					<form:input path="password" title="password"/>
+					<form:errors path="password"></form:errors>
 				</div>
 				<div>
 					<input type="submit" value="Sign in" id="submit" > 
