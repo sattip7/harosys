@@ -8,4 +8,6 @@ public interface IUserDao {
 	public boolean validateUser(LdapUserDto dto);
 	
 	public boolean saveUser(UserDto user);
+
+	public boolean verify(String text);
 }

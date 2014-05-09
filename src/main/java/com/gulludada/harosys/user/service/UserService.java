@@ -3,6 +3,7 @@ package com.gulludada.harosys.user.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.gulludada.harosys.user.dao.IUserDao;
@@ -10,13 +11,14 @@ import com.gulludada.harosys.user.mvc.dto.LdapUserDto;
 import com.gulludada.harosys.user.mvc.dto.UserDto;
 
 @Service
+
 public class UserService implements IUserService {
 	
 	@Autowired
 	IUserDao userDao;
 	
 	@Override
-	@Transactional
+	
 	public boolean validateUser(LdapUserDto ldapUserDto) {
 		// TODO Auto-generated method stub
 		
@@ -48,6 +50,19 @@ public class UserService implements IUserService {
 		return "SENT";
 		else
 		return "NOT_SENT";
+	}
+	
+	@Override
+	@Transactional
+	public boolean verify(String text) {
+		// TODO Auto-generated method stub
+		
+//		UserDto dto = new UserDto();
+//		dto.setUserName("gullu");
+//		dto.setEmail("gullu@gmail.com");
+//		return dto;
+		
+		return userDao.verify(text);
 	}
 
 }

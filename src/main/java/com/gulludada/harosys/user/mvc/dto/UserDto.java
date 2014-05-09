@@ -31,7 +31,6 @@ public class UserDto {
 	
 	@NotEmpty
 	@Id
-	@GeneratedValue
 	private String userName;
 	
 	@NotEmpty

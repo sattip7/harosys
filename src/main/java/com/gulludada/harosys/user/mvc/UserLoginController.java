@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gulludada.harosys.user.mvc.dto.LdapUserDto;
@@ -63,11 +66,32 @@ public class UserLoginController {
 			return LOGIN_PAGE;
 		}
 		
+		System.out.println("submitLoginPage...");
 		session.setAttribute("user", true);
 		
 		return SUCCESS_LOGIN_PAGE;
 	}
 
+	
+	@RequestMapping(value = "user/login1", method = RequestMethod.POST)
+	
+	public @ResponseBody String verifyPage(HttpServletRequest req) {
+		LOGGER.info("Checking whether fileds already exists in database "
+				+ "...");
+		
+		System.out.println(req.getParameter("text"));
+		boolean result=userService.verify(req.getParameter("text"));
+	
+		JSONObject json= new JSONObject();
+		try {
+			json.put("result", result);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return json.toString(); 
+	}
+	
 	@RequestMapping(value = "user/forgot", method = RequestMethod.GET)
 	public String getPasswordByForgotPassword(ModelMap map) {
 		LOGGER.info("================>> A user is forgoted password with mail or userid "
@@ -87,9 +111,9 @@ public class UserLoginController {
 	public ModelAndView submitSignUpPage(HttpServletRequest req, @Valid @ModelAttribute("userDto") UserDto userDto, BindingResult result) {
 		LOGGER.info("================>> A user is trying to create a a/c with mailid or username "
 				+ "...");
-//		if(result.hasErrors()){
-//			return new ModelAndView(SIGN_UP_PAGE);
-//		}
+		if(result.hasErrors()){
+			return new ModelAndView(SIGN_UP_PAGE);
+		}
 		boolean b=userService.saveUser(userDto);
 				System.out.println(b);
 		if(b)

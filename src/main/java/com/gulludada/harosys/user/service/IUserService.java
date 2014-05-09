@@ -10,4 +10,6 @@ public interface IUserService {
 	public boolean saveUser(UserDto userDto);
 	
 	public String sendLinkToMailForForgotPassword(String userdetails);
+
+	boolean verify(String text);
 }

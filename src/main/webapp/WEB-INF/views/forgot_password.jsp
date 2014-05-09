@@ -22,7 +22,7 @@ $(document).ready(function() {
 	$('#submit').click(function() {
 		
 	
-	$('#form').validate({ 
+	$('#form').validate({  
 		
 		rules: {        	        		
 		
@@ -48,6 +48,8 @@ $(document).ready(function() {
         }
 	    
 	});
+	
+	
 	
 });
 });
