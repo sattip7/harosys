@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.gulludada.harosys.user.mail.ApplicationMailer;
 import com.gulludada.harosys.user.mvc.dto.LdapUserDto;
 import com.gulludada.harosys.user.mvc.dto.UserDto;
 import com.gulludada.harosys.user.service.IUserService;
@@ -33,6 +34,9 @@ public class UserLoginController {
 	
 	@Autowired
 	IUserService userService;
+	
+	@Autowired
+	ApplicationMailer mailer;
 
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(UserLoginController.class);
@@ -121,5 +125,13 @@ public class UserLoginController {
 		//String login="${pageContext.request.contextPath}"+ "/user/login;
 		System.out.println("abc");
 		return new ModelAndView("forward:"+"/user/login");
+	}
+	
+	@RequestMapping(value="user/forget", method=RequestMethod.POST)
+	public String forgetCredentials(HttpServletRequest req){
+		
+		mailer.sendMail("gaganrv@gmail.com", "subject", "body");
+		
+		return LOGIN_PAGE;
 	}
 }

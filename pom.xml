@@ -167,6 +167,8 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.2.0.Final</version>
 		</dependency>
+		
+		
 	<dependency>
   <groupId>org.hibernate</groupId>
   <artifactId>hibernate-c3p0</artifactId>
@@ -192,11 +194,19 @@
 	<artifactId>json</artifactId>
 	<version>20090211</version>
 </dependency>
-            
-            <dependency>
-    <groupId>javax.mail</groupId>
-    <artifactId>mail</artifactId>
-    <version>1.4</version>
+    
+  
+ <dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-context-support</artifactId>
+	<version>4.0.3.RELEASE</version>
 </dependency>
+                   
+<dependency>
+	    <groupId>javax.mail</groupId>
+	    <artifactId>mail</artifactId>
+	    <version>1.4.3</version>
+    </dependency>
+
 	</dependencies>
 	</project>
