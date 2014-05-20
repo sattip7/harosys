@@ -57,15 +57,16 @@ $(document).ready(function() {
 </head>
 <body>
 <div id="wrapper" >
-<form:form id="form" action="${pageContext.request.contextPath}/user/forget" method="post" >
+<form:form id="form" action="${pageContext.request.contextPath}/user/forget" method="post" command="userDto">
 
 
            	 <legend></legend>
             
                
                 <div>
-               Please Enter Your EmailId:  <form:input path="email" title="Enter Email"/>
-                  
+<%--                Please Enter Your EmailId:  <form:input path="email" title="Enter Email"/> --%>
+				 Please Enter Your EmailId:  <form:input path="email" title="Enter Email"/>
+               
                 </div>
 				
                 <input value="Send" name="submit" id="submit" type="submit"><input value="Cancel"  type="reset">
